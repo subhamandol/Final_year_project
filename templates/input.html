@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Type Selection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        function showFields() {
+            var questionType = document.querySelector('input[name="question_type"]:checked').value;
+            document.getElementById('subjective').style.display = (questionType === 'subjective') ? 'block' : 'none';
+            document.getElementById('objective').style.display = (questionType === 'objective') ? 'block' : 'none';
+        }
+
+        function showSpinner(formId) {
+            document.getElementById('waiting-message').style.display = 'block';
+            document.getElementById(formId).submit();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>What type of question do you want to ask the model?</h1>
+        <form>
+            <label class="radio-inline">
+                <input type="radio" name="question_type" value="subjective" onclick="showFields()" required>
+                Subjective
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="question_type" value="objective" onclick="showFields()">
+                Objective
+            </label>
+        </form>
+
+        <form id="subjective" action="/subjective_output" method="post" style="display:none;" onsubmit="showSpinner('subjective')">
+            <label for="subjective_question">Enter Your Subjective Question</label>
+            <textarea id="subjective_question" name="subjective_question" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+            <button type="button" onclick="window.location.href='/'">Back</button>
+        </form>
+
+        <form id="objective" action="/objective_output" method="post" style="display:none;" onsubmit="showSpinner('objective')">
+            <label for="objective_question">Enter Your Objective Question</label>
+            <textarea id="objective_question" name="objective_question" rows="4" required></textarea>
+
+            <label for="choice_a">Choice A</label>
+            <input type="text" id="choice_a" name="choice_a" required>
+
+            <label for="choice_b">Choice B</label>
+            <input type="text" id="choice_b" name="choice_b" required>
+
+            <label for="choice_c">Choice C</label>
+            <input type="text" id="choice_c" name="choice_c" required>
+
+            <label for="choice_d">Choice D</label>
+            <input type="text" id="choice_d" name="choice_d" required>
+
+            <button type="submit">Submit</button>
+            <button type="button" onclick="window.location.href='/'">Back</button>
+        </form>
+
+        <div id="waiting-message" style="display:none;">
+            <p><strong>The Model is generating the response. Please Wait!</strong> <span class="spinner"></span></p>
+        </div>
+    </div>
+</body>
+</html>

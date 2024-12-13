@@ -1,0 +1,142 @@
+/* Apply a gradient background */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Style the container with a shadow and rounded corners */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 700px;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+/* Make the header more prominent */
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.8em;
+}
+
+/* Style the form labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Style the inline radio buttons */
+.radio-inline {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+    color: #555;
+}
+
+/* Style the textarea */
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    resize: vertical; /* Allow the user to manually resize the textarea */
+    /*overflow: hidden; /* Hide the scrollbar */
+    white-space: pre-wrap; /* Preserve whitespace and break lines as needed */
+    word-wrap: break-word; /* Break long words and wrap text correctly */
+}
+
+/* Style the input field */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+/* Style the submit button */
+button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin: 5px; /* Add margin between buttons */
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Spinner CSS */
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Style the link on the output page */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        font-size: 0.9em; /* Slightly reduce the font size for mobile */
+    }
+}

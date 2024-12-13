@@ -1,0 +1,5 @@
+Flask~=3.0.3
+transformers
+torch
+huggingface_hub
+requests
