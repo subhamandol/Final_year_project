@@ -18,12 +18,10 @@
             display: inline-block;
             margin-right: 10px;
         }
-
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-
         .loading-container {
             display: flex;
             align-items: center;
@@ -48,10 +46,10 @@
         <p>Choice C: <strong>{{ choice_c }}</strong></p>
         <p>Choice D: <strong>{{ choice_d }}</strong></p>
         <p>Model response: <strong>{{ response }}</strong></p>
-        <div class="loading-container">
-            <p id="loading-message"><strong>The model is now being trained. Please Wait!</strong></p>
-            <div id="spinner" class="spinner"></div>
-        </div>
+<!--        <div class="loading-container">-->
+<!--            <p id="loading-message"><strong>The model is now being trained. Please Wait!</strong></p>-->
+<!--            <div id="spinner" class="spinner"></div>-->
+<!--        </div>-->
         <a href="/">Go back</a>
     </div>
 </body>
